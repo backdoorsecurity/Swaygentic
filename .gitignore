@@ -1,0 +1,5 @@
+update-github.sh
+.git
+.git/*
+\__pycache__/
+github.txt

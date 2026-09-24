@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)"
+STARTUP="$ROOT/STARTUP.md"
+RULES="$(cat "$STARTUP")"
+
+grok_args=(
+	--rules "$RULES"
+#	 --system-prompt-override "$RULES"
+	"$@"
+)
+
+if [[ "${container:-}" == "bwrap" ]]; then
+	exec grok "${grok_args[@]}"
+fi
+
+exec "$ROOT/sandbox/run.sh" grok "${grok_args[@]}"

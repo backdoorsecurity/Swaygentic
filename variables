@@ -1,0 +1,30 @@
+# knobs. python syntax. restart the agent after edits.
+
+# main
+browser = "brave-origin-nightly"
+url = "about:blank"
+
+# browser flags (chromium/brave). delete lines you do not want.
+# debugging port/address are set under launch knobs, not here.
+# uses the default Origin Nightly profile. no --user-data-dir.
+# --start-maximized (not fullscreen). launch() also forces maximized over CDP.
+browser_flags = [
+	"--ozone-platform=wayland",
+	"--start-maximized",
+	"--no-first-run",
+	"--no-default-browser-check",
+	"--hide-crash-restore-bubble",
+	"--disable-infobars",
+]
+
+# launch / ip / port
+cdp_addr = "127.0.0.1"
+cdp_port = 9222
+launch_settle = 1.0
+settle = 0.3
+scroll_keep = 8
+scroll_settle = 0.45
+click_settle = 0.45
+nav_probe = 0.45
+net_idle = 0.5
+load_timeout = 20

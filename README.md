@@ -11,7 +11,8 @@
 - Brave origin nightly is the browser of choice.
 - 27 mcp tools.
 - Can be run with an ollama model, configured in agent.py.
-- the ollama models are a bit shakey with complex browser work. I am building a dataset with grok to fine tune a vision model. I will include those in this repo once completed.
+- the ollama models are a bit shakey with complex browser work. i reduced the available functions in agent.py.
+- I am building a dataset with grok to fine tune an open vision model. I will include those in this repo once completed.
 - This is browser/cli control only, no pixel clicking until i find a way to prevent focus stealing with a headed browser.
 - To tune for maximum speed, disable all unneccessary plugins/skills in grok build. if you can afford the tokens, set model to grok 4.7 fast.
 - When the agent is started with "swaygentic", STARTUP.md is automatically appended to system message with --rules. you can change it to --system-prompt-override in Swaygentic/bin/swaygentic to replace the default system message if needed.

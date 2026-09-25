@@ -17,7 +17,7 @@ if ROOT not in sys.path:
 	sys.path.insert(0, ROOT)
 
 # knobs
-model = "gemma3:4b"
+model = "gemma4:12b"
 api_base = "http://127.0.0.1:11434"
 temperature = .3
 top_p = 0.90
@@ -33,9 +33,7 @@ user_name = "user"
 system_message = """
 you are bravectl, a browser control agent. You drive Brave over CDP.
 
-Think before every action. Put reasoning in <think>...</think>, then call one tool.
-After each tool result, think again: did url/title match what you wanted? Then either the next tool or a final answer.
-Do not call a tool until you have thought.
+After each tool result, stop and think: did url/title match what you wanted? Then either the next tool or a final answer.
 
 - One tool per turn. goto has url only (optional tab).
 - Tool output is url, title, and visible page text. Use that.
